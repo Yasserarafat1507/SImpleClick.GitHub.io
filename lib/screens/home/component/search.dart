@@ -16,20 +16,16 @@ class SearchField extends StatelessWidget {
         borderRadius: BorderRadius.circular(15),
       ),
       child: TextField(
-        onChanged: (value) {
-          
-        },
+        onChanged: (value) {},
         decoration: InputDecoration(
-          contentPadding: EdgeInsets.symmetric(
-            horizontal: getPropScreenWidth(20),  
-            vertical: getPropScreenWidth(9)
-            ),
-          border: InputBorder.none,
-          focusedBorder: InputBorder.none,
-          enabledBorder: InputBorder.none,
-          hintText: "Search Product",
-          prefixIcon: Icon(Icons.search)
-        ),
+            contentPadding: EdgeInsets.symmetric(
+                horizontal: getPropScreenWidth(10),
+                vertical: getPropScreenWidth(9)),
+            border: InputBorder.none,
+            focusedBorder: InputBorder.none,
+            enabledBorder: InputBorder.none,
+            hintText: "Search Product",
+            prefixIcon: Icon(Icons.search)),
       ),
     );
   }

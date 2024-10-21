@@ -8,36 +8,53 @@ class BannerDiscount extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-      margin: EdgeInsets.all(getPropScreenWidth(20)),
-      decoration: BoxDecoration(
-        color: Color(0xff4a3298),
-        borderRadius: BorderRadius.circular(15)),
-        child: Text.rich(
-          TextSpan(
-            style: TextStyle(
-              color: Colors.white,
-            ),
-            children: [
-              TextSpan(
-                text: "A Summer Suprise\n",
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: GestureDetector(
+        onTap: () {},
+        child: Stack(children: [
+          Container(
+            width: double.infinity,
+            height: getPropScreenWidth(100),
+            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+            margin: EdgeInsets.all(getPropScreenWidth(20)),
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage("assets/images/img banner summer.png"),
+                    fit: BoxFit.cover),
+                borderRadius: BorderRadius.circular(15)),
+          ),
+          Container(
+            width: double.infinity,
+            height: getPropScreenWidth(100),
+            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+            margin: EdgeInsets.all(getPropScreenWidth(20)),
+            decoration: BoxDecoration(
+                gradient: LinearGradient(colors: [
+                  Colors.black.withOpacity(0.5),
+                  Colors.black.withOpacity(0.1),
+                ]),
+                borderRadius: BorderRadius.circular(15)),
+            child: Text.rich(TextSpan(
                 style: TextStyle(
-                  fontSize: getPropScreenHeight(20),
-                )
+                  color: Colors.white,
                 ),
-              TextSpan(
-                text: "Cashback 20%",
-                style: TextStyle(
-                  fontSize: getPropScreenWidth(24),
-                  fontWeight: FontWeight.bold,
-                )
-              ),
-            ]
-          )
-        ),
+                children: [
+                  TextSpan(
+                      text: "A Summer Suprise\n",
+                      style: TextStyle(
+                        fontSize: getPropScreenHeight(20),
+                      )),
+                  TextSpan(
+                      text: "Cashback 20%",
+                      style: TextStyle(
+                        fontSize: getPropScreenWidth(24),
+                        fontWeight: FontWeight.bold,
+                      )),
+                ])),
+          ),
+        ]),
+      ),
     );
   }
 }
-
