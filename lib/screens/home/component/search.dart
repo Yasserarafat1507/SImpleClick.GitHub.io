@@ -3,8 +3,10 @@ import 'package:ui_ecommerce/constant.dart';
 import 'package:ui_ecommerce/sized_config.dart';
 
 class SearchField extends StatelessWidget {
+  final Function(String)? onChanged;
   const SearchField({
     super.key,
+    this.onChanged,
   });
 
   @override
@@ -12,20 +14,19 @@ class SearchField extends StatelessWidget {
     return Container(
       width: SizedConfig.screenWidth * 0.6,
       decoration: BoxDecoration(
-        color: kSecoundaryColor.withOpacity(0.1),
-        borderRadius: BorderRadius.circular(15),
-      ),
+          color: kSecoundaryColor.withOpacity(0.1),
+          borderRadius: BorderRadius.circular(15)),
       child: TextField(
-        onChanged: (value) {},
+        onChanged: onChanged,
         decoration: InputDecoration(
             contentPadding: EdgeInsets.symmetric(
-                horizontal: getPropScreenWidth(10),
+                horizontal: getPropScreenWidth(20),
                 vertical: getPropScreenWidth(9)),
             border: InputBorder.none,
             focusedBorder: InputBorder.none,
             enabledBorder: InputBorder.none,
             hintText: "Search Product",
-            prefixIcon: Icon(Icons.search)),
+            prefixIcon: const Icon(Icons.search)),
       ),
     );
   }

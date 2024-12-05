@@ -1,13 +1,17 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:ui_ecommerce/constant.dart';
 import 'package:ui_ecommerce/model/product_data.dart';
 import 'package:ui_ecommerce/sized_config.dart';
+import 'package:ui_ecommerce/state_management/theme_provider.dart';
 
 class ItemPoularProduct extends StatelessWidget {
   const ItemPoularProduct({
-    super.key, required this.product, required this.press,
+    super.key,
+    required this.product,
+    required this.press,
   });
 
   final Product product;
@@ -15,10 +19,11 @@ class ItemPoularProduct extends StatelessWidget {
 
   // Jika kSecondaryColor berasal dari constant.dart, pastikan sudah terdefinisi.
   // Jika belum, kita bisa inisialisasi default seperti berikut
-  final Color kSecondaryColor = Colors.grey;  // Atau warna lain yang sesuai
+  final Color kSecondaryColor = Colors.grey; // Atau warna lain yang sesuai
 
   @override
   Widget build(BuildContext context) {
+    final themeProvider = Provider.of<ThemeProvider>(context);
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: getPropScreenWidth(10)),
       child: SizedBox(
@@ -53,7 +58,9 @@ class ItemPoularProduct extends StatelessWidget {
                     style: TextStyle(
                       fontSize: getPropScreenWidth(18),
                       fontWeight: FontWeight.w600,
-                      color: kPrimaryColor,
+                      color: themeProvider.isDarkMode
+                          ? Colors.blue
+                          : kPrimaryColor,
                     ),
                   ),
                   Container(
@@ -64,8 +71,10 @@ class ItemPoularProduct extends StatelessWidget {
                     ),
                     child: Icon(
                       Icons.favorite,
-                      color: product.isFavourite ? Colors.red : kSecondaryColor,
-                      size: getPropScreenWidth(15),
+                      color: product.isFavourite == true
+                          ? Colors.red
+                          : kSecondaryColor,
+                      size: getPropScreenWidth(13),
                     ),
                   ),
                 ],

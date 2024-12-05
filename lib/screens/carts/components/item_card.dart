@@ -5,7 +5,8 @@ import 'package:ui_ecommerce/sized_config.dart';
 
 class ItemCard extends StatelessWidget {
   const ItemCard({
-    super.key, required this.cart,
+    super.key,
+    required this.cart,
   });
 
   final Cart cart;
@@ -53,8 +54,7 @@ class ItemCard extends StatelessWidget {
                     )),
                 TextSpan(
                     text: "x${cart.numOfItem}",
-                    style: TextStyle(
-                        fontSize: getPropScreenWidth(15), color: kTextColor))
+                    style: TextStyle(fontSize: getPropScreenWidth(15)))
               ]),
             ),
           ],

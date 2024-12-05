@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:ui_ecommerce/screens/carts/components/cart_bottom_bar.dart';
+import 'package:ui_ecommerce/state_management/cart_provider.dart';
 
 import 'components/body.dart';
 
@@ -25,7 +27,9 @@ class CartsScreen extends StatelessWidget {
           icon: Icon(Icons.arrow_back_ios)),
       title: Column(
         children: [
-          Text("Your Cart", style: Theme.of(context).textTheme.bodyLarge),
+          Consumer<CartProvider>(
+              builder: (context, cart, child) => Text("Your Cart",
+                  style: Theme.of(context).textTheme.bodyLarge)),
         ],
       ),
     );

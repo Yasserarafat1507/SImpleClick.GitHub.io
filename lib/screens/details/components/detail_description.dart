@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:readmore/readmore.dart';
 import 'package:ui_ecommerce/constant.dart';
 import 'package:ui_ecommerce/model/product_data.dart';
 import 'package:ui_ecommerce/sized_config.dart';
+import 'package:ui_ecommerce/state_management/favorite_provider.dart';
 
 class DetailDescription extends StatelessWidget {
   const DetailDescription({
@@ -22,9 +24,9 @@ class DetailDescription extends StatelessWidget {
           child: Text(
             product.title,
             style: TextStyle(
-                fontSize: getPropScreenWidth(20),
-                fontWeight: FontWeight.bold,
-                color: Colors.black),
+              fontSize: getPropScreenWidth(20),
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
         Align(
@@ -37,11 +39,19 @@ class DetailDescription extends StatelessWidget {
                 borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(getPropScreenWidth(20)),
                     bottomLeft: Radius.circular(getPropScreenWidth(20)))),
-            child: Icon(
-              Icons.favorite,
-              color: product.isFavourite
-                  ? Colors.red
-                  : kSecoundaryColor.withOpacity(0.5),
+            child: Consumer<FavoriteProvider>(
+              builder: (context, favorite, child) => IconButton(
+                icon: Icon(
+                  Icons.favorite,
+                  size: getPropScreenWidth(18),
+                ),
+                onPressed: () {
+                  favorite.toggleFavoriteStatus(product.id);
+                },
+                color: product.isFavourite
+                    ? Colors.red
+                    : kSecoundaryColor.withOpacity(0.5),
+              ),
             ),
           ),
         ),

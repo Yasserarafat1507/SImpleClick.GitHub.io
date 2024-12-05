@@ -15,7 +15,7 @@ class BannerDiscount extends StatelessWidget {
         child: Stack(children: [
           Container(
             width: double.infinity,
-            height: getPropScreenWidth(100),
+            height: getPropScreenWidth(120),
             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
             margin: EdgeInsets.all(getPropScreenWidth(20)),
             decoration: BoxDecoration(
@@ -26,7 +26,7 @@ class BannerDiscount extends StatelessWidget {
           ),
           Container(
             width: double.infinity,
-            height: getPropScreenWidth(100),
+            height: getPropScreenWidth(120),
             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
             margin: EdgeInsets.all(getPropScreenWidth(20)),
             decoration: BoxDecoration(
@@ -41,15 +41,20 @@ class BannerDiscount extends StatelessWidget {
                 ),
                 children: [
                   TextSpan(
-                      text: "A Summer Suprise\n",
+                      text: "for new users\n",
                       style: TextStyle(
                         fontSize: getPropScreenHeight(20),
                       )),
                   TextSpan(
-                      text: "Cashback 20%",
+                      text: "70% discount\n",
                       style: TextStyle(
                         fontSize: getPropScreenWidth(24),
                         fontWeight: FontWeight.bold,
+                      )),
+                  TextSpan(
+                      text: "until August 15",
+                      style: TextStyle(
+                        fontSize: getPropScreenHeight(20),
                       )),
                 ])),
           ),

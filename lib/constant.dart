@@ -33,7 +33,6 @@ const String kAddressNullError = "Please enter your Address";
 final headingStyle = TextStyle(
   fontSize: getPropScreenWidth(28),
   fontWeight: FontWeight.bold,
-  color: Colors.black,
   height: 1.5,
 );
 

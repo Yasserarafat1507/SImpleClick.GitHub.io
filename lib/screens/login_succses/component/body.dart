@@ -22,7 +22,6 @@ class Body extends StatelessWidget {
           Text("Login Success", style: TextStyle(
             fontSize: getPropScreenWidth(30),
             fontWeight: FontWeight.bold,
-            color: Colors.black,
           )),
           Spacer(),
           SizedBox(

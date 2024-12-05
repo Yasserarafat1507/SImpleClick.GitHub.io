@@ -4,7 +4,9 @@ import 'package:ui_ecommerce/sized_config.dart';
 
 class SplashContent extends StatelessWidget {
   const SplashContent({
-    super.key, required this.text, required this.image,
+    super.key,
+    required this.text,
+    required this.image,
   });
 
   final String text, image;
@@ -14,20 +16,24 @@ class SplashContent extends StatelessWidget {
     return Column(
       children: [
         Spacer(),
-        Text("ClickSimple", 
+        Text(
+          "ClickSimple",
           style: TextStyle(
             color: kPrimaryColor,
             fontSize: getPropScreenWidth(36),
           ),
         ),
-        Text(text, 
-        style: TextStyle(
-            color: kTextColor,
+        Text(
+          text,
+          style: TextStyle(
             fontSize: getPropScreenWidth(14),
           ),
         ),
-        Spacer(flex: 2,),
-        Image.asset(image,
+        Spacer(
+          flex: 2,
+        ),
+        Image.asset(
+          image,
           height: getPropScreenHeight(265),
           width: getPropScreenWidth(235),
         ),

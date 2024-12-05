@@ -64,7 +64,12 @@ class ItemButtonProfile extends StatelessWidget {
             vertical: getPropScreenWidth(15)),
         padding: EdgeInsets.all(getPropScreenWidth(20)),
         decoration: BoxDecoration(
-            color: Color(0xfff5f6f9), borderRadius: BorderRadius.circular(15)),
+          color: Theme.of(context).scaffoldBackgroundColor,
+          borderRadius: BorderRadius.circular(15),
+          border: Border.all(
+            color: Theme.of(context).iconTheme.color!, // Border dinamis
+          ),
+        ),
         child: Row(
           children: [
             SvgPicture.asset(

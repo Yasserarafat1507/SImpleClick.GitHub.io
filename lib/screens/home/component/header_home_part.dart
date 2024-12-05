@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:ui_ecommerce/model/card.dart';
+import 'package:provider/provider.dart';
 import 'package:ui_ecommerce/screens/carts/carts_screen.dart';
 import 'package:ui_ecommerce/screens/home/component/icon_with_trigger.dart';
 import 'package:ui_ecommerce/screens/home/component/search.dart';
 import 'package:ui_ecommerce/sized_config.dart';
+import 'package:ui_ecommerce/state_management/cart_provider.dart';
 
 class headerHomePart extends StatelessWidget {
+  final Function(String)? onChanged;
   const headerHomePart({
-    super.key,
+    super.key, this.onChanged,
   });
 
   @override
@@ -17,14 +19,16 @@ class headerHomePart extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          SearchField(),
+          SearchField(onChanged: onChanged,),
           GestureDetector(
             onTap: () {
               Navigator.pushNamed(context, CartsScreen.routesName);
             },
-            child: iconWithTigger(
-              svgIcon: 'assets/icons/Cart Icon.svg',
-              tigger: listCart.length.toString(),
+            child: Consumer<CartProvider>(
+              builder: (context, cart, child) => iconWithTigger(
+                svgIcon: 'assets/icons/Cart Icon.svg',
+                tigger: cart.listCart.length.toString(),
+              ),
             ),
           ),
           iconWithTigger(

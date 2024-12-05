@@ -16,18 +16,24 @@ class Body extends StatelessWidget {
             SizedBox(
               height: SizedConfig.screenHeight * 0.04,
             ),
-            Text("Forgot Password", style: TextStyle(
-              fontSize: getPropScreenHeight(28),
-              color: Colors.black,
-              fontWeight: FontWeight.bold,
+            Text(
+              "Forgot Password",
+              style: TextStyle(
+                fontSize: getPropScreenHeight(28),
+                fontWeight: FontWeight.bold,
+              ),
             ),
+            Text(
+              "Please enter your email an we will send \nyou a link to rentren to your account",
+              textAlign: TextAlign.center,
             ),
-            Text("Please enter your email an we will send \nyou a link to rentren to your account", textAlign:TextAlign.center,),
             SizedBox(
               height: SizedConfig.screenHeight * 0.06,
             ),
             ForgotPwForm(),
-            SizedBox(height: SizedConfig.screenHeight * 0.06,),
+            SizedBox(
+              height: SizedConfig.screenHeight * 0.06,
+            ),
             dontHaveAccount()
           ],
         ),
@@ -37,16 +43,18 @@ class Body extends StatelessWidget {
 
   Row dontHaveAccount() {
     return Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text("Don't have an account? "),
-                  GestureDetector(
-                    onTap: () {
-                      // Navigator.pushNamed(context, SignUpScreen.routesName);
-                    },
-                    child: Text("Sing Up", style:   TextStyle(color: kPrimaryColor),)
-                  ),
-                ],
-              );
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text("Don't have an account? "),
+        GestureDetector(
+            onTap: () {
+              // Navigator.pushNamed(context, SignUpScreen.routesName);
+            },
+            child: Text(
+              "Sing Up",
+              style: TextStyle(color: kPrimaryColor),
+            )),
+      ],
+    );
   }
 }
