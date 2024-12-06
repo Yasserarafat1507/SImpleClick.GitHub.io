@@ -5,7 +5,7 @@ class FavoriteProvider with ChangeNotifier {
   List<Product> _listProducts = demoProducts;
 // get favorite products = true from list products
 
-  List<Product> get products => _listProducts;
+  List<Product> get listproducts => _listProducts;
 
   FavoriteProvider() {
     print(favoriteProducts.asMap());
