@@ -1,0 +1,4 @@
+#Fri Dec 06 09:09:45 WIB 2024
+base.0=/Users/yasser/Downloads/Flutter app/ui_ecommerce/build/app/intermediates/dex/release/minifyReleaseWithR8/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
