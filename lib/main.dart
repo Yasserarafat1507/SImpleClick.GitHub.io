@@ -61,8 +61,11 @@ class MainApp extends StatelessWidget {
             isLoggedIn ? HomeScreen.routesName : SplashScreen.routesName,
         routes: routes,
         locale: DevicePreview.locale(context),
-        builder: DevicePreview.appBuilder,
+        builder: (context, child) {
+          return DevicePreview.appBuilder(context, child!);
+        },
       ),
     );
   }
 }
+
