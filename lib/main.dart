@@ -17,27 +17,27 @@ Future<void> main() async {
   bool isLoggedIn = prefs.getBool("isLoggedIn") ?? false;
 
   runApp(
-    MultiProvider(
-      providers: [
-        ChangeNotifierProvider(
-          create: (context) => ThemeProvider(),
-        ),
-        ChangeNotifierProvider(
-          create: (context) => AuthProvider(),
-        ),
-        ChangeNotifierProvider(
-          create: (context) => CartProvider(),
-        ),
-        ChangeNotifierProvider(
-          create: (context) => FavoriteProvider(),
-        ),
-      ],
-      child: DevicePreview(
-        isToolbarVisible: false,
-        enabled: true,
-        defaultDevice: Devices.ios.iPhone13ProMax,
-        devices: [Devices.ios.iPhone13ProMax],
-        builder: (context) => MainApp(
+    DevicePreview(
+      isToolbarVisible: false,
+      enabled: true,
+      defaultDevice: Devices.ios.iPhone13ProMax,
+      devices: [Devices.ios.iPhone13ProMax],
+      builder: (context) => MultiProvider(
+        providers: [
+          ChangeNotifierProvider(
+            create: (context) => ThemeProvider(),
+          ),
+          ChangeNotifierProvider(
+            create: (context) => AuthProvider(),
+          ),
+          ChangeNotifierProvider(
+            create: (context) => CartProvider(),
+          ),
+          ChangeNotifierProvider(
+            create: (context) => FavoriteProvider(),
+          ),
+        ],
+        child: MainApp(
           isLoggedIn: isLoggedIn,
         ),
       ),
@@ -61,11 +61,8 @@ class MainApp extends StatelessWidget {
             isLoggedIn ? HomeScreen.routesName : SplashScreen.routesName,
         routes: routes,
         locale: DevicePreview.locale(context),
-        builder: (context, child) {
-          return DevicePreview.appBuilder(context, child!);
-        },
+        builder: DevicePreview.appBuilder,
       ),
     );
   }
 }
-
