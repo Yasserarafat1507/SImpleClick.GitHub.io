@@ -33,7 +33,7 @@ Future<void> main() async {
         ),
       ],
       child: DevicePreview(
-        enabled: false,
+        enabled: true,
         builder: (context) => MainApp(
           isLoggedIn: isLoggedIn,
         ),
