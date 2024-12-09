@@ -17,24 +17,26 @@ Future<void> main() async {
   bool isLoggedIn = prefs.getBool("isLoggedIn") ?? false;
 
   runApp(
-    MultiProvider(
-      providers: [
-        ChangeNotifierProvider(
-          create: (context) => ThemeProvider(),
-        ),
-        ChangeNotifierProvider(
-          create: (context) => AuthProvider(),
-        ),
-        ChangeNotifierProvider(
-          create: (context) => CartProvider(),
-        ),
-        ChangeNotifierProvider(
-          create: (context) => FavoriteProvider(),
-        ),
-      ],
-      child: DevicePreview(
-        enabled: true,
-        builder: (context) => MainApp(
+    DevicePreview(
+      enabled: true,
+      defaultDevice: Devices.ios.iPhone13ProMax,
+      devices: [Devices.ios.iPhone13ProMax],
+      builder: (context) => MultiProvider(
+        providers: [
+          ChangeNotifierProvider(
+            create: (context) => ThemeProvider(),
+          ),
+          ChangeNotifierProvider(
+            create: (context) => AuthProvider(),
+          ),
+          ChangeNotifierProvider(
+            create: (context) => CartProvider(),
+          ),
+          ChangeNotifierProvider(
+            create: (context) => FavoriteProvider(),
+          ),
+        ],
+        child: MainApp(
           isLoggedIn: isLoggedIn,
         ),
       ),
