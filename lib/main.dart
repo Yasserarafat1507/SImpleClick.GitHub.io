@@ -33,10 +33,7 @@ Future<void> main() async {
         ),
       ],
       child: DevicePreview(
-        isToolbarVisible: false,
         enabled: true,
-        defaultDevice: Devices.ios.iPhone13ProMax,
-        devices: [Devices.ios.iPhone13ProMax],
         builder: (context) => MainApp(
           isLoggedIn: isLoggedIn,
         ),
