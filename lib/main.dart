@@ -54,6 +54,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<ThemeProvider>(
       builder: (context, theme, child) => MaterialApp(
+        useInheritedMediaQuery: true,
         debugShowCheckedModeBanner: false,
         theme: themeData(theme.isDarkMode),
         title: 'ClickSimple',
