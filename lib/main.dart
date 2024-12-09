@@ -1,3 +1,4 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -31,8 +32,11 @@ Future<void> main() async {
           create: (context) => FavoriteProvider(),
         ),
       ],
-      child: MainApp(
-        isLoggedIn: isLoggedIn,
+      child: DevicePreview(
+        enabled: true,
+        builder: (context) => MainApp(
+          isLoggedIn: isLoggedIn,
+        ),
       ),
     ),
   );
@@ -53,6 +57,8 @@ class MainApp extends StatelessWidget {
         initialRoute:
             isLoggedIn ? HomeScreen.routesName : SplashScreen.routesName,
         routes: routes,
+        locale: DevicePreview.locale(context),
+        builder: DevicePreview.appBuilder,
       ),
     );
   }
