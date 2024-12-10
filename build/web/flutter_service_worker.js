@@ -3,11 +3,11 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 
-const RESOURCES = {"flutter_bootstrap.js": "a855b4b499f29587726595cd79d90182",
+const RESOURCES = {"flutter_bootstrap.js": "1058969af4467637f01c90ded8885b72",
 "version.json": "b1daa3b923404323d4db852e0ea9e072",
 "index.html": "b1ef1064f310b205d9551d635cc84234",
 "/": "b1ef1064f310b205d9551d635cc84234",
-"main.dart.js": "75af96b4b547c289785e69e1b87ab9a5",
+"main.dart.js": "fd511fb1de0ab19ab9058818aec81024",
 "flutter.js": "f393d3c16b631f36852323de8e583132",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
@@ -21,7 +21,7 @@ const RESOURCES = {"flutter_bootstrap.js": "a855b4b499f29587726595cd79d90182",
 "assets/AssetManifest.bin.json": "b72e3dccd26342f98ec608e68c9c6d07",
 "assets/shaders/ink_sparkle.frag": "ecc85a2e95f5e9f53123dcaf8cb9b6ce",
 "assets/AssetManifest.bin": "55eca5285a7b1e38b2bf222fd61b28c6",
-"assets/fonts/MaterialIcons-Regular.otf": "53e1d163bc74d5b3c2d2dd7729c74bf9",
+"assets/fonts/MaterialIcons-Regular.otf": "89b85bb53a2aeaccd41a3e6a8b6910af",
 "assets/assets/images/img%2520banner%2520summer.png": "d88111958f1da31ab1ff34da68ba2775",
 "assets/assets/images/mastercard-2.png": "03c20b63d4ffa13484f48fac9d2e32b2",
 "assets/assets/images/Pattern%2520Success.png": "a71451afd365080610bddda9c633292a",
